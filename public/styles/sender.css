@@ -46,18 +46,11 @@ header .right{
 
 
 section{
-    display: flex;
-    align-items: center;
-    padding: 20px 80px;
-    justify-content: space-between;
+    margin: auto;
+    max-width: 800px;
 }
 
-section .left{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    flex: 1 0 0; 
-}
+
 
 video#localVideo{
     border-radius: 20px;
