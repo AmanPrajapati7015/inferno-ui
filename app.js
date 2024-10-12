@@ -37,6 +37,9 @@ app.get('/', (req, res)=>{
 app.use('/sender', senderRouter);
 app.use('/display', adminRouter);
 
+app.get('/input',(req, res)=>{
+  res.render('data-input');
+})
 
 io.on('connection', onConnect);
 

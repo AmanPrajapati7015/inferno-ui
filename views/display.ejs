@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Live Webcam Stream</title>
+  <title>Monitor GUI</title>
   <link rel="stylesheet" href="/styles/display.css">
 </head>
+
 <body>
   <header>
-    <div class="right">
-      <div class="field">
-        <h1>All Incoming Streams</h1>
-      </div>
-    </div>
-
     <div class="left">
-      <img src="/img/logo.png" width="300px" alt="">
-      <p>SECURITY THAT NEVER SLEEPS</p>
+      <p><strong>Speed:</strong> <span id="display-speed"></span> m/s</p>
+      <p><strong>Latitude:</strong> <span id="display-latitude"></span></p>
+      <p><strong>Longitude:</strong> <span id="display-longitude"></span></p>
     </div>
-    
+    <div class="right">
+      <p><strong>Temperature:</strong> <span id="display-temperature"></span> °C</p>
+      <p><strong>Battery:</strong> <span id="display-battery"></span> %</p>
+      <p><strong>Network Strength:</strong> <span id="display-network"></span> %</p>
+    </div>
   </header>
+  
   <div id="streams">
     <!-- video elements will be added here -->
   </div>
@@ -27,4 +29,5 @@
   <script src="/socket.io/socket.io.js" defer></script>
   <script src="/display.js" defer></script>
 </body>
+
 </html>

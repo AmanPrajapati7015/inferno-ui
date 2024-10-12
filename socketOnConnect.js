@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 function onConnect(socket) {
     let id;
 
@@ -13,10 +11,16 @@ function onConnect(socket) {
         socket.join('displayRoom');      //adding display client to a 'display' room
     })
 
+    socket.on('update data', (data)=>{
+        socket.to('displayRoom').emit('update data', data)
+    })
+
     //sending to display client to remove the video element
     socket.on('disconnect', () => {
         socket.to('displayRoom').emit('remove video', id);
-    });
+    })
+
+
 }
 
 module.exports = onConnect;

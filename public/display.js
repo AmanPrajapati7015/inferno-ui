@@ -30,6 +30,10 @@ socket.on('remove video', (id)=>{
 })
 
 
+socket.on('update data', (data)=>{
+    console.log(data);
+    updateData(data);
+})
 
 
 function createVideoDiv (stream, id){
@@ -52,4 +56,15 @@ function createVideoDiv (stream, id){
     videoDiv.appendChild(idPara);
 
     return videoDiv;
+}
+
+
+function updateData(dataObj){
+
+    document.getElementById('display-speed').textContent = dataObj.speed;
+    document.getElementById('display-latitude').textContent = dataObj.latitude;
+    document.getElementById('display-longitude').textContent = dataObj.longitude;
+    document.getElementById('display-temperature').textContent = dataObj.temperature;
+    document.getElementById('display-battery').textContent = dataObj.battery;
+    document.getElementById('display-network').textContent = dataObj.network;
 }
